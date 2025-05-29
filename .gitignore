@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+ENV/
+pip-log.txt
+pip-delete-this-directory.txt
+.tox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.so
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Rust
+target/
+Cargo.lock
+**/*.rs.bk 
