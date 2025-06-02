@@ -1,2 +1,0 @@
-dataclasses>=0.6
-typing>=3.7.4 
