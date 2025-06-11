@@ -87,36 +87,37 @@ class DwarfAnalyzer:
             i += 1
 
     def _parse_file_table(self, comp_unit_lines):
-        """Parses the file table from a compile unit's DWARF info."""
+        """
+        Parses the file table from a DWARF compilation unit.
+        The file table is a list of file entries that follow the main CU attributes.
+        """
         comp_dir = ""
-        # Find compilation directory first
+        # First, find the compilation directory.
         for line in comp_unit_lines:
             if 'DW_AT_comp_dir' in line:
                 match = re.search(r'DW_AT_comp_dir\s*:\s*(?:\(indirect string, offset: 0x[0-9a-f]+\):\s*)?(.+)', line)
                 if match:
-                    comp_dir = match.group(1).strip()
+                    comp_dir = match.group(1).strip().strip('"') # Remove quotes if present
                     break
         
-        # Now find file entries by looking for DW_TAG_file_type and their associated DW_AT_name
-        # DWARF file table entries start at index 1.
-        # The table is a series of DW_TAG_file_type DIEs within the DW_TAG_compile_unit
+        # Now find file entries. In objdump output, these appear sequentially
+        # and are not always explicitly tagged with DW_TAG_file_type on the same line.
+        # This is a robust heuristic that assumes the file list starts after the main CU attributes.
         file_index = 1
-        lines = iter(comp_unit_lines)
-        for line in lines:
-            # A bit of a state machine here. We look for the start of the file table.
-            # In objdump output, it's just a list of DW_AT_name attributes after the main compile unit attributes.
-            # A more correct way is to look for DW_TAG_file_type, but let's stick to the name attribute for simplicity
-            # if it's not a known attribute of the compile unit itself.
-            if "DW_AT_name" in line and "DW_TAG_compile_unit" not in line:
-                # This is a heuristic that works for `objdump` output where file names are listed sequentially.
+        found_main_cu_name = False
+        for line in comp_unit_lines:
+            if 'DW_AT_name' in line:
                 match = re.search(r'DW_AT_name\s*:\s*(?:\(indirect string, offset: 0x[0-9a-f]+\):\s*)?(.+)', line)
                 if match:
-                    file_name = match.group(1).strip()
-                    # Skip the main compilation unit name itself, which also appears here
-                    if 'cgu.0' in file_name or '@' in file_name:
+                    name = match.group(1).strip()
+                    if not found_main_cu_name:
+                        # The first name is the compilation unit itself, skip it.
+                        found_main_cu_name = True
                         continue
-
-                    full_path = os.path.join(comp_dir, file_name) if comp_dir and not os.path.isabs(file_name) else file_name
+                    
+                    # Subsequent names are file paths.
+                    # This logic assumes they appear in order of their index.
+                    full_path = os.path.join(comp_dir, name) if comp_dir and not os.path.isabs(name) else name
                     self.file_table[str(file_index)] = full_path
                     file_index += 1
 
@@ -199,10 +200,16 @@ class DwarfAnalyzer:
                 if name_match:
                     name = name_match.group(1)
             if 'DW_AT_decl_file' in line:
+                # First, try to resolve by file index (the robust method)
                 file_index_match = re.search(r'DW_AT_decl_file\s*:\s*(\d+)', line)
                 if file_index_match:
                     file_index = file_index_match.group(1)
                     decl_file = self.file_table.get(file_index, f"file_index_{file_index}")
+                else:
+                    # Fallback: try to parse it as a direct string (the heuristic)
+                    file_name_match = re.search(r'DW_AT_decl_file\s*:\s*\d+\s+\d+\s+(.+)', line)
+                    if file_name_match:
+                        decl_file = file_name_match.group(1).strip()
             if 'DW_AT_decl_line' in line:
                 line_match = re.search(r'DW_AT_decl_line\s*:\s*(\d+)', line)
                 if line_match:
