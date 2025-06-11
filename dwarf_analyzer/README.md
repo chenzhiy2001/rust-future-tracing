@@ -238,7 +238,7 @@ def find_poll_symbol(binary: str, struct_name: str) -> str:
 
 ## Contributing
 
-Feel free to submit issues and enhancement requests!
+Feel free to submit issues and enhancement requests! 
 
 ## Future Dependency Visualization
 

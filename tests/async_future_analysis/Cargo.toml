@@ -7,4 +7,4 @@ edition = "2021"
 futures = "0.3"
 
 [profile.release]
-debug = true  # Enable debug information in release builds
+debug = 2  # Enable debug information in release builds

@@ -8,4 +8,4 @@ reqwest = "0.12.15"
 tokio = { version = "1.44", features = ["full"] }
 
 [profile.dev]
-debug = true
+debug = 2

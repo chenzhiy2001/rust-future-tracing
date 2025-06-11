@@ -2,6 +2,8 @@ use std::future::Future;
 use std::pin::Pin;
 use std::task::{Context, Poll};
 
+// simple std future example
+
 // A simple future that returns a number after some computation
 struct NumberFuture {
     value: u32,

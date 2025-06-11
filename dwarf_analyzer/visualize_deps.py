@@ -19,7 +19,7 @@ def sanitize_node_name(name: str) -> str:
         sanitized = 'n' + sanitized
     return sanitized
 
-def create_dot_graph(dependency_tree: Dict[str, List[str]]) -> str:
+def create_dot_graph(dependency_tree: Dict[str, List[str]], state_machines: List[Dict]) -> str:
     """Convert dependency tree to DOT format."""
     dot_lines = [
         'digraph FutureDependencies {',
@@ -29,12 +29,24 @@ def create_dot_graph(dependency_tree: Dict[str, List[str]]) -> str:
         '    // Node definitions',
     ]
     
-    # Add nodes with their full type names as labels
+    # Create a mapping from state machine name to its locations
+    name_to_locations = {sm['name']: sm.get('locations', []) for sm in state_machines}
+
+    # Add nodes with their full type names and locations as labels
     for future_type in dependency_tree:
         node_name = sanitize_node_name(future_type)
+        locations = name_to_locations.get(future_type, [])
+        loc_str = ""
+        if locations:
+            # Take the first location as a representative location for the label
+            # You can customize this logic, e.g., show all locations
+            loc = locations[0]
+            # Use the full path for clarity
+            loc_str = f"\\n({loc['file']}:{loc['line']})"
+            
         # Escape quotes and backslashes in the label
         escaped_label = future_type.replace('\\', '\\\\').replace('"', '\\"')
-        dot_lines.append(f'    "{node_name}" [label="{escaped_label}"];')
+        dot_lines.append(f'    "{node_name}" [label="{escaped_label}{loc_str}"];')
     
     # Add edges
     dot_lines.append('    // Edges')
@@ -61,11 +73,11 @@ def main():
         with open(json_path, 'r') as f:
             data = json.load(f)
         
-        if 'dependency_tree' not in data:
-            print("Error: No dependency_tree found in the JSON file")
+        if 'dependency_tree' not in data or 'state_machines' not in data:
+            print("Error: No dependency_tree or state_machines found in the JSON file")
             sys.exit(1)
         
-        dot_content = create_dot_graph(data['dependency_tree'])
+        dot_content = create_dot_graph(data['dependency_tree'], data['state_machines'])
         
         # Write DOT file
         dot_path = os.path.splitext(json_path)[0] + '.dot'

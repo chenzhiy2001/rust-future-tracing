@@ -2,9 +2,10 @@
 
 import subprocess
 import re
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from typing import List, Dict, Optional, Set
 import json
+import os
 
 @dataclass
 class StructMember:
@@ -14,6 +15,8 @@ class StructMember:
     size: int
     alignment: int
     is_artificial: bool = False
+    decl_file: Optional[str] = None
+    decl_line: Optional[int] = None
 
 @dataclass
 class Struct:
@@ -24,6 +27,7 @@ class Struct:
     is_async_fn: bool
     state_machine: bool
     type_id: Optional[str] = None
+    locations: List[Dict[str, any]] = field(default_factory=list)
 
 class DwarfAnalyzer:
     def __init__(self, binary_path: str):
@@ -33,6 +37,7 @@ class DwarfAnalyzer:
         self.current_member: Optional[StructMember] = None
         self.type_id_to_struct: Dict[str, str] = {}
         self.struct_name_to_type_id: Dict[str, str] = {}
+        self.file_table: Dict[str, str] = {}
 
     def run_objdump(self) -> str:
         """Run objdump and return its output."""
@@ -48,6 +53,18 @@ class DwarfAnalyzer:
         i = 0
         while i < len(lines):
             line = lines[i]
+            # First, look for the file table in a compile unit
+            if 'DW_TAG_compile_unit' in line:
+                self.file_table = {} # Reset for new compile unit
+                comp_unit_lines = [line]
+                i += 1
+                while i < len(lines) and 'DW_TAG_compile_unit' not in lines[i]:
+                    comp_unit_lines.append(lines[i])
+                    i += 1
+                self._parse_file_table(comp_unit_lines)
+                # Restart parsing from the beginning of this unit for structs
+                i -= len(comp_unit_lines)
+
             # Detect the beginning of a structure DIE – rely on depth value instead of spaces
             m = re.match(r'\s*<(\d+)><[0-9a-f]+>: Abbrev Number: .*?\(DW_TAG_structure_type\)', line)
             if m:
@@ -68,6 +85,40 @@ class DwarfAnalyzer:
                 self._parse_struct_block(struct_lines)
                 continue
             i += 1
+
+    def _parse_file_table(self, comp_unit_lines):
+        """Parses the file table from a compile unit's DWARF info."""
+        comp_dir = ""
+        # Find compilation directory first
+        for line in comp_unit_lines:
+            if 'DW_AT_comp_dir' in line:
+                match = re.search(r'DW_AT_comp_dir\s*:\s*(?:\(indirect string, offset: 0x[0-9a-f]+\):\s*)?(.+)', line)
+                if match:
+                    comp_dir = match.group(1).strip()
+                    break
+        
+        # Now find file entries by looking for DW_TAG_file_type and their associated DW_AT_name
+        # DWARF file table entries start at index 1.
+        # The table is a series of DW_TAG_file_type DIEs within the DW_TAG_compile_unit
+        file_index = 1
+        lines = iter(comp_unit_lines)
+        for line in lines:
+            # A bit of a state machine here. We look for the start of the file table.
+            # In objdump output, it's just a list of DW_AT_name attributes after the main compile unit attributes.
+            # A more correct way is to look for DW_TAG_file_type, but let's stick to the name attribute for simplicity
+            # if it's not a known attribute of the compile unit itself.
+            if "DW_AT_name" in line and "DW_TAG_compile_unit" not in line:
+                # This is a heuristic that works for `objdump` output where file names are listed sequentially.
+                match = re.search(r'DW_AT_name\s*:\s*(?:\(indirect string, offset: 0x[0-9a-f]+\):\s*)?(.+)', line)
+                if match:
+                    file_name = match.group(1).strip()
+                    # Skip the main compilation unit name itself, which also appears here
+                    if 'cgu.0' in file_name or '@' in file_name:
+                        continue
+
+                    full_path = os.path.join(comp_dir, file_name) if comp_dir and not os.path.isabs(file_name) else file_name
+                    self.file_table[str(file_index)] = full_path
+                    file_index += 1
 
     def _parse_struct_block(self, struct_lines):
         """Parse a block of lines describing a struct and its members."""
@@ -140,11 +191,22 @@ class DwarfAnalyzer:
         offset = 0
         alignment = 0
         is_artificial = False
+        decl_file = None
+        decl_line = None
         for line in member_lines:
             if 'DW_AT_name' in line and name is None:
                 name_match = re.search(r'DW_AT_name\s*:\s*(?:\(indirect string, offset: 0x[0-9a-f]+\):\s*)?(.+)', line)
                 if name_match:
                     name = name_match.group(1)
+            if 'DW_AT_decl_file' in line:
+                file_index_match = re.search(r'DW_AT_decl_file\s*:\s*(\d+)', line)
+                if file_index_match:
+                    file_index = file_index_match.group(1)
+                    decl_file = self.file_table.get(file_index, f"file_index_{file_index}")
+            if 'DW_AT_decl_line' in line:
+                line_match = re.search(r'DW_AT_decl_line\s*:\s*(\d+)', line)
+                if line_match:
+                    decl_line = int(line_match.group(1))
             if 'DW_AT_type' in line:
                 type_match = re.search(r'DW_AT_type\s*:\s*<0x([0-9a-f]+)>', line)
                 if type_match:
@@ -166,7 +228,9 @@ class DwarfAnalyzer:
                 offset=offset,
                 size=0,  # Will be set later
                 alignment=alignment,
-                is_artificial=is_artificial
+                is_artificial=is_artificial,
+                decl_file=decl_file,
+                decl_line=decl_line
             )
         return None
 
@@ -278,12 +342,18 @@ class DwarfAnalyzer:
         analysis = self.analyze_futures()
         dep_tree = self.build_dependency_tree()
         def struct_to_dict(struct):
+            locations = []
+            for member in struct.members:
+                if member.decl_file and member.decl_line:
+                    locations.append({'file': member.decl_file, 'line': member.decl_line})
+            
             return {
                 'name': struct.name,
                 'size': struct.size,
                 'alignment': struct.alignment,
                 'is_async_fn': struct.is_async_fn,
                 'state_machine': struct.state_machine,
+                'locations': locations,
                 'members': [
                     {
                         'name': m.name,
@@ -291,7 +361,9 @@ class DwarfAnalyzer:
                         'offset': m.offset,
                         'size': m.size,
                         'alignment': m.alignment,
-                        'is_artificial': m.is_artificial
+                        'is_artificial': m.is_artificial,
+                        'decl_file': m.decl_file,
+                        'decl_line': m.decl_line
                     } for m in struct.members
                 ],
                 'type_id': struct.type_id
