@@ -76,7 +76,39 @@ Environment variable `ASYNC_FLAME_PLUGIN` selects a runtime plugin
 
 ---
 
-## 4. Visualise
+## 4. Visualizing the Future Dependency Graph
+
+To better understand the relationships between futures, you can generate and visualize a dependency graph.
+
+**1. Generate the Dependency JSON**
+
+First, run the `dwarf_analyzer` to produce a JSON file containing the dependency tree:
+```bash
+python3 -m dwarf_analyzer.main tests/tokio_test_project/target/debug/tokio_test_project --json > results/async_dependencies.json
+```
+
+**2. Generate the DOT Graph File**
+
+Next, use the `visualize_deps.py` script to convert the JSON into a DOT file:
+```bash
+python3 -m dwarf_analyzer.visualize_deps results/async_dependencies.json
+```
+This will create `results/async_dependencies.dot`.
+
+**3. View the Graph**
+
+You can now visualize the graph. For large graphs, interactive viewing with `xdot` is recommended.
+
+*   **Interactive (with search):**
+    ```bash
+    xdot results/async_dependencies.dot
+    ```
+*   **Static Image (PNG):**
+    ```bash
+    dot -Tpng results/async_dependencies.dot -o results/dependency_graph.png
+    ```
+
+## 5. Generating and Visualizing a Flame Graph
 
 1. Open Chrome/Chromium.
 2. Navigate to `chrome://tracing` (or `about://tracing` in recent versions).
@@ -87,7 +119,7 @@ thread (`tid`).
 
 ---
 
-## 5. Directory Layout
+## 6. Directory Layout
 
 ```
 future-tracing/
@@ -101,7 +133,7 @@ future-tracing/
 
 ---
 
-## 6. Troubleshooting
+## 7. Troubleshooting
 
 * **`future_map.json not found` in GDB** – run step 2 first.
 * **Zero futures exported** – rebuild your binary with debuginfo and confirm the path.

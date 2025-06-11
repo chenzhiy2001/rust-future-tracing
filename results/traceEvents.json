@@ -2,291 +2,1072 @@
   "traceEvents": [
     {
       "ph": "B",
-      "ts": 1749600781820374.2,
+      "ts": 1749614615625091.2,
       "pid": 1,
-      "tid": "22630",
-      "name": "<complex_future_test::complex_task3::{async_fn#0}::recursive_compute::{async_block_env#0} as core::future::future::Future>::{vtable_type}",
+      "tid": "43702",
+      "name": "Task<futures_task::future_obj::LocalFutureObj<()>>",
       "cat": "future_poll"
     },
     {
       "ph": "B",
-      "ts": 1749600781823425.0,
+      "ts": 1749614615674974.8,
       "pid": 1,
-      "tid": "22630",
-      "name": "<complex_future_test::complex_task3::{async_fn#0}::recursive_compute::{async_block_env#0} as core::future::future::Future>::{vtable_type}",
+      "tid": "43703",
+      "name": "Task<futures_task::future_obj::LocalFutureObj<()>>",
+      "cat": "future_poll"
+    },
+    {
+      "ph": "i",
+      "ts": 1749614615677183.5,
+      "pid": 1,
+      "tid": "43703",
+      "name": "tokio::runtime::task::raw::poll",
+      "cat": "plugin_tokio",
+      "args": {
+        "tokio_evt": "tokio::runtime::task::raw::poll"
+      }
+    },
+    {
+      "ph": "i",
+      "ts": 1749614615677470.8,
+      "pid": 1,
+      "tid": "43702",
+      "name": "tokio::runtime::task::raw::poll",
+      "cat": "plugin_tokio",
+      "args": {
+        "tokio_evt": "tokio::runtime::task::raw::poll"
+      }
+    },
+    {
+      "ph": "B",
+      "ts": 1749614615687285.8,
+      "pid": 1,
+      "tid": "43704",
+      "name": "Task<futures_task::future_obj::LocalFutureObj<()>>",
       "cat": "future_poll"
     },
     {
       "ph": "B",
-      "ts": 1749600781824217.0,
+      "ts": 1749614615687736.2,
       "pid": 1,
-      "tid": "22630",
-      "name": "<complex_future_test::complex_task3::{async_fn#0}::recursive_compute::{async_block_env#0} as core::future::future::Future>::{vtable_type}",
+      "tid": "43705",
+      "name": "Task<futures_task::future_obj::LocalFutureObj<()>>",
+      "cat": "future_poll"
+    },
+    {
+      "ph": "i",
+      "ts": 1749614615688598.2,
+      "pid": 1,
+      "tid": "43704",
+      "name": "tokio::runtime::task::raw::poll",
+      "cat": "plugin_tokio",
+      "args": {
+        "tokio_evt": "tokio::runtime::task::raw::poll"
+      }
+    },
+    {
+      "ph": "B",
+      "ts": 1749614615688977.0,
+      "pid": 1,
+      "tid": "43706",
+      "name": "Task<futures_task::future_obj::LocalFutureObj<()>>",
+      "cat": "future_poll"
+    },
+    {
+      "ph": "i",
+      "ts": 1749614615689506.5,
+      "pid": 1,
+      "tid": "43705",
+      "name": "tokio::runtime::task::raw::poll",
+      "cat": "plugin_tokio",
+      "args": {
+        "tokio_evt": "tokio::runtime::task::raw::poll"
+      }
+    },
+    {
+      "ph": "i",
+      "ts": 1749614615690635.5,
+      "pid": 1,
+      "tid": "43706",
+      "name": "tokio::runtime::task::raw::poll",
+      "cat": "plugin_tokio",
+      "args": {
+        "tokio_evt": "tokio::runtime::task::raw::poll"
+      }
+    },
+    {
+      "ph": "B",
+      "ts": 1749614615690952.8,
+      "pid": 1,
+      "tid": "43707",
+      "name": "Task<futures_task::future_obj::LocalFutureObj<()>>",
       "cat": "future_poll"
     },
     {
       "ph": "B",
-      "ts": 1749600781826144.8,
+      "ts": 1749614615691701.0,
       "pid": 1,
-      "tid": "22630",
-      "name": "<complex_future_test::complex_task3::{async_fn#0}::recursive_compute::{async_block_env#0} as core::future::future::Future>::{vtable_type}",
+      "tid": "43709",
+      "name": "Task<futures_task::future_obj::LocalFutureObj<()>>",
       "cat": "future_poll"
     },
     {
       "ph": "B",
-      "ts": 1749600781827213.5,
+      "ts": 1749614615692336.8,
       "pid": 1,
-      "tid": "22630",
-      "name": "<complex_future_test::complex_task3::{async_fn#0}::recursive_compute::{async_block_env#0} as core::future::future::Future>::{vtable_type}",
+      "tid": "43708",
+      "name": "Task<futures_task::future_obj::LocalFutureObj<()>>",
+      "cat": "future_poll"
+    },
+    {
+      "ph": "i",
+      "ts": 1749614615692849.0,
+      "pid": 1,
+      "tid": "43707",
+      "name": "tokio::runtime::task::raw::poll",
+      "cat": "plugin_tokio",
+      "args": {
+        "tokio_evt": "tokio::runtime::task::raw::poll"
+      }
+    },
+    {
+      "ph": "i",
+      "ts": 1749614615693360.5,
+      "pid": 1,
+      "tid": "43709",
+      "name": "tokio::runtime::task::raw::poll",
+      "cat": "plugin_tokio",
+      "args": {
+        "tokio_evt": "tokio::runtime::task::raw::poll"
+      }
+    },
+    {
+      "ph": "i",
+      "ts": 1749614615694583.2,
+      "pid": 1,
+      "tid": "43708",
+      "name": "tokio::runtime::task::raw::poll",
+      "cat": "plugin_tokio",
+      "args": {
+        "tokio_evt": "tokio::runtime::task::raw::poll"
+      }
+    },
+    {
+      "ph": "B",
+      "ts": 1749614615786775.8,
+      "pid": 1,
+      "tid": "43677",
+      "name": "(http::request::Request<()>, h2::client::PushedResponseFuture)",
       "cat": "future_poll"
     },
     {
       "ph": "B",
-      "ts": 1749600781827980.0,
+      "ts": 1749614615789509.5,
       "pid": 1,
-      "tid": "22630",
-      "name": "<complex_future_test::complex_task3::{async_fn#0}::recursive_compute::{async_block_env#0} as core::future::future::Future>::{vtable_type}",
+      "tid": "43677",
+      "name": "ResponseFuture<0x7694bc>",
       "cat": "future_poll"
     },
     {
       "ph": "B",
-      "ts": 1749600781828731.5,
+      "ts": 1749614615820367.8,
       "pid": 1,
-      "tid": "22630",
-      "name": "<complex_future_test::complex_task3::{async_fn#0}::recursive_compute::{async_block_env#0} as core::future::future::Future>::{vtable_type}",
+      "tid": "43710",
+      "name": "Task<futures_task::future_obj::LocalFutureObj<()>>",
+      "cat": "future_poll"
+    },
+    {
+      "ph": "E",
+      "ts": 1749614615822248.2,
+      "pid": 1,
+      "tid": "43677",
+      "name": "ResponseFuture<0x7694bc>",
+      "cat": "future_poll"
+    },
+    {
+      "ph": "E",
+      "ts": 1749614615823565.8,
+      "pid": 1,
+      "tid": "43677",
+      "name": "(http::request::Request<()>, h2::client::PushedResponseFuture)",
+      "cat": "future_poll"
+    },
+    {
+      "ph": "i",
+      "ts": 1749614615823848.0,
+      "pid": 1,
+      "tid": "43710",
+      "name": "tokio::runtime::task::raw::poll",
+      "cat": "plugin_tokio",
+      "args": {
+        "tokio_evt": "tokio::runtime::task::raw::poll"
+      }
+    },
+    {
+      "ph": "E",
+      "ts": 1749614615885023.5,
+      "pid": 1,
+      "tid": "43710",
+      "name": "Task<futures_task::future_obj::LocalFutureObj<()>>",
       "cat": "future_poll"
     },
     {
       "ph": "B",
-      "ts": 1749600781829360.5,
+      "ts": 1749614615886446.0,
       "pid": 1,
-      "tid": "22630",
-      "name": "<complex_future_test::complex_task3::{async_fn#0}::recursive_compute::{async_block_env#0} as core::future::future::Future>::{vtable_type}",
+      "tid": "43677",
+      "name": "(http::request::Request<()>, h2::client::PushedResponseFuture)",
       "cat": "future_poll"
     },
     {
       "ph": "B",
-      "ts": 1749600781829974.0,
+      "ts": 1749614615889436.2,
       "pid": 1,
-      "tid": "22630",
-      "name": "<complex_future_test::complex_task3::{async_fn#0}::recursive_compute::{async_block_env#0} as core::future::future::Future>::{vtable_type}",
+      "tid": "43677",
+      "name": "ResponseFuture<0x7694bc>",
       "cat": "future_poll"
     },
     {
       "ph": "B",
-      "ts": 1749600781830736.8,
+      "ts": 1749614615895028.2,
       "pid": 1,
-      "tid": "22630",
-      "name": "<complex_future_test::complex_task3::{async_fn#0}::recursive_compute::{async_block_env#0} as core::future::future::Future>::{vtable_type}",
+      "tid": "43677",
+      "name": "*const (dyn core::future::future::Future<Output=tokio::sync::watch::Receiver<()>> + core::marker::Send)<0xc27792>",
+      "cat": "future_poll"
+    },
+    {
+      "ph": "E",
+      "ts": 1749614615904949.8,
+      "pid": 1,
+      "tid": "43677",
+      "name": "*const (dyn core::future::future::Future<Output=tokio::sync::watch::Receiver<()>> + core::marker::Send)<0xc27792>",
+      "cat": "future_poll"
+    },
+    {
+      "ph": "E",
+      "ts": 1749614615907463.5,
+      "pid": 1,
+      "tid": "43677",
+      "name": "ResponseFuture<0x7694bc>",
+      "cat": "future_poll"
+    },
+    {
+      "ph": "E",
+      "ts": 1749614615909370.0,
+      "pid": 1,
+      "tid": "43677",
+      "name": "(http::request::Request<()>, h2::client::PushedResponseFuture)",
       "cat": "future_poll"
     },
     {
       "ph": "B",
-      "ts": 1749600781831401.5,
+      "ts": 1749614615959510.2,
       "pid": 1,
-      "tid": "22630",
-      "name": "<complex_future_test::complex_task3::{async_fn#0}::recursive_compute::{async_block_env#0} as core::future::future::Future>::{vtable_type}",
+      "tid": "43677",
+      "name": "(http::request::Request<()>, h2::client::PushedResponseFuture)",
       "cat": "future_poll"
     },
     {
       "ph": "B",
-      "ts": 1749600781832386.5,
+      "ts": 1749614615960616.8,
       "pid": 1,
-      "tid": "22630",
-      "name": "<complex_future_test::complex_task3::{async_fn#0}::recursive_compute::{async_block_env#0} as core::future::future::Future>::{vtable_type}",
+      "tid": "43677",
+      "name": "ResponseFuture<0x7694bc>",
       "cat": "future_poll"
     },
     {
       "ph": "E",
-      "ts": 1749600781833551.8,
+      "ts": 1749614615962311.2,
       "pid": 1,
-      "tid": "22630",
-      "name": "<complex_future_test::complex_task3::{async_fn#0}::recursive_compute::{async_block_env#0} as core::future::future::Future>::{vtable_type} (unwound)",
-      "cat": "future_poll_unwind"
+      "tid": "43677",
+      "name": "ResponseFuture<0x7694bc>",
+      "cat": "future_poll"
     },
     {
       "ph": "E",
-      "ts": 1749600781833775.0,
+      "ts": 1749614615962821.8,
       "pid": 1,
-      "tid": "22630",
-      "name": "<complex_future_test::complex_task3::{async_fn#0}::recursive_compute::{async_block_env#0} as core::future::future::Future>::{vtable_type} (unwound)",
-      "cat": "future_poll_unwind"
+      "tid": "43677",
+      "name": "(http::request::Request<()>, h2::client::PushedResponseFuture)",
+      "cat": "future_poll"
+    },
+    {
+      "ph": "B",
+      "ts": 1749614616019188.5,
+      "pid": 1,
+      "tid": "43677",
+      "name": "(http::request::Request<()>, h2::client::PushedResponseFuture)",
+      "cat": "future_poll"
+    },
+    {
+      "ph": "B",
+      "ts": 1749614616020769.2,
+      "pid": 1,
+      "tid": "43677",
+      "name": "ResponseFuture<0x7694bc>",
+      "cat": "future_poll"
+    },
+    {
+      "ph": "B",
+      "ts": 1749614616025807.8,
+      "pid": 1,
+      "tid": "43708",
+      "name": "Task<futures_task::future_obj::LocalFutureObj<()>>",
+      "cat": "future_poll"
     },
     {
       "ph": "E",
-      "ts": 1749600781833864.8,
+      "ts": 1749614616049864.8,
       "pid": 1,
-      "tid": "22630",
-      "name": "<complex_future_test::complex_task3::{async_fn#0}::recursive_compute::{async_block_env#0} as core::future::future::Future>::{vtable_type} (unwound)",
-      "cat": "future_poll_unwind"
+      "tid": "43677",
+      "name": "ResponseFuture<0x7694bc>",
+      "cat": "future_poll"
     },
     {
       "ph": "E",
-      "ts": 1749600781833933.2,
+      "ts": 1749614616050363.5,
       "pid": 1,
-      "tid": "22630",
-      "name": "<complex_future_test::complex_task3::{async_fn#0}::recursive_compute::{async_block_env#0} as core::future::future::Future>::{vtable_type} (unwound)",
-      "cat": "future_poll_unwind"
+      "tid": "43677",
+      "name": "(http::request::Request<()>, h2::client::PushedResponseFuture)",
+      "cat": "future_poll"
+    },
+    {
+      "ph": "i",
+      "ts": 1749614616051747.0,
+      "pid": 1,
+      "tid": "43708",
+      "name": "tokio::runtime::task::raw::poll",
+      "cat": "plugin_tokio",
+      "args": {
+        "tokio_evt": "tokio::runtime::task::raw::poll"
+      }
+    },
+    {
+      "ph": "B",
+      "ts": 1749614616077690.0,
+      "pid": 1,
+      "tid": "43677",
+      "name": "(http::request::Request<()>, h2::client::PushedResponseFuture)",
+      "cat": "future_poll"
     },
     {
       "ph": "E",
-      "ts": 1749600781833993.2,
+      "ts": 1749614616080480.5,
       "pid": 1,
-      "tid": "22630",
-      "name": "<complex_future_test::complex_task3::{async_fn#0}::recursive_compute::{async_block_env#0} as core::future::future::Future>::{vtable_type} (unwound)",
-      "cat": "future_poll_unwind"
+      "tid": "43708",
+      "name": "Task<futures_task::future_obj::LocalFutureObj<()>>",
+      "cat": "future_poll"
+    },
+    {
+      "ph": "B",
+      "ts": 1749614616082074.2,
+      "pid": 1,
+      "tid": "43677",
+      "name": "ResponseFuture<0x7694bc>",
+      "cat": "future_poll"
+    },
+    {
+      "ph": "i",
+      "ts": 1749614616083154.8,
+      "pid": 1,
+      "tid": "43677",
+      "name": "tokio::runtime::task::raw::schedule",
+      "cat": "plugin_tokio",
+      "args": {
+        "tokio_evt": "tokio::runtime::task::raw::schedule"
+      }
     },
     {
       "ph": "E",
-      "ts": 1749600781834040.5,
+      "ts": 1749614616084400.2,
       "pid": 1,
-      "tid": "22630",
-      "name": "<complex_future_test::complex_task3::{async_fn#0}::recursive_compute::{async_block_env#0} as core::future::future::Future>::{vtable_type} (unwound)",
-      "cat": "future_poll_unwind"
+      "tid": "43677",
+      "name": "ResponseFuture<0x7694bc>",
+      "cat": "future_poll"
+    },
+    {
+      "ph": "B",
+      "ts": 1749614616084808.5,
+      "pid": 1,
+      "tid": "43708",
+      "name": "Task<futures_task::future_obj::LocalFutureObj<()>>",
+      "cat": "future_poll"
     },
     {
       "ph": "E",
-      "ts": 1749600781834090.2,
+      "ts": 1749614616085541.5,
       "pid": 1,
-      "tid": "22630",
-      "name": "<complex_future_test::complex_task3::{async_fn#0}::recursive_compute::{async_block_env#0} as core::future::future::Future>::{vtable_type} (unwound)",
-      "cat": "future_poll_unwind"
+      "tid": "43677",
+      "name": "(http::request::Request<()>, h2::client::PushedResponseFuture)",
+      "cat": "future_poll"
+    },
+    {
+      "ph": "i",
+      "ts": 1749614616086192.5,
+      "pid": 1,
+      "tid": "43708",
+      "name": "tokio::runtime::task::raw::poll",
+      "cat": "plugin_tokio",
+      "args": {
+        "tokio_evt": "tokio::runtime::task::raw::poll"
+      }
     },
     {
       "ph": "E",
-      "ts": 1749600781834133.2,
+      "ts": 1749614616087623.0,
       "pid": 1,
-      "tid": "22630",
-      "name": "<complex_future_test::complex_task3::{async_fn#0}::recursive_compute::{async_block_env#0} as core::future::future::Future>::{vtable_type} (unwound)",
-      "cat": "future_poll_unwind"
+      "tid": "43708",
+      "name": "Task<futures_task::future_obj::LocalFutureObj<()>>",
+      "cat": "future_poll"
+    },
+    {
+      "ph": "i",
+      "ts": 1749614616142775.2,
+      "pid": 1,
+      "tid": "43703",
+      "name": "tokio::runtime::task::raw::schedule",
+      "cat": "plugin_tokio",
+      "args": {
+        "tokio_evt": "tokio::runtime::task::raw::schedule"
+      }
+    },
+    {
+      "ph": "B",
+      "ts": 1749614616144275.2,
+      "pid": 1,
+      "tid": "43703",
+      "name": "Task<futures_task::future_obj::LocalFutureObj<()>>",
+      "cat": "future_poll"
+    },
+    {
+      "ph": "i",
+      "ts": 1749614616145034.8,
+      "pid": 1,
+      "tid": "43703",
+      "name": "tokio::runtime::task::raw::poll",
+      "cat": "plugin_tokio",
+      "args": {
+        "tokio_evt": "tokio::runtime::task::raw::poll"
+      }
+    },
+    {
+      "ph": "B",
+      "ts": 1749614616147371.0,
+      "pid": 1,
+      "tid": "43703",
+      "name": "(futures_channel::oneshot::Sender<http::header::map::HeaderMap<http::header::value::HeaderValue>>, futures_channel::oneshot::Receiver<http::header::map::HeaderMap<http::header::value::HeaderValue>>)",
+      "cat": "future_poll"
+    },
+    {
+      "ph": "B",
+      "ts": 1749614616147904.0,
+      "pid": 1,
+      "tid": "43677",
+      "name": "(http::request::Request<()>, h2::client::PushedResponseFuture)",
+      "cat": "future_poll"
     },
     {
       "ph": "E",
-      "ts": 1749600781834180.0,
+      "ts": 1749614616148867.5,
       "pid": 1,
-      "tid": "22630",
-      "name": "<complex_future_test::complex_task3::{async_fn#0}::recursive_compute::{async_block_env#0} as core::future::future::Future>::{vtable_type} (unwound)",
-      "cat": "future_poll_unwind"
+      "tid": "43703",
+      "name": "(futures_channel::oneshot::Sender<http::header::map::HeaderMap<http::header::value::HeaderValue>>, futures_channel::oneshot::Receiver<http::header::map::HeaderMap<http::header::value::HeaderValue>>)",
+      "cat": "future_poll"
+    },
+    {
+      "ph": "B",
+      "ts": 1749614616149180.0,
+      "pid": 1,
+      "tid": "43703",
+      "name": "(futures_channel::oneshot::Sender<http::header::map::HeaderMap<http::header::value::HeaderValue>>, futures_channel::oneshot::Receiver<http::header::map::HeaderMap<http::header::value::HeaderValue>>)",
+      "cat": "future_poll"
+    },
+    {
+      "ph": "B",
+      "ts": 1749614616150011.0,
+      "pid": 1,
+      "tid": "43677",
+      "name": "ResponseFuture<0x7694bc>",
+      "cat": "future_poll"
     },
     {
       "ph": "E",
-      "ts": 1749600781834221.5,
+      "ts": 1749614616150510.0,
       "pid": 1,
-      "tid": "22630",
-      "name": "<complex_future_test::complex_task3::{async_fn#0}::recursive_compute::{async_block_env#0} as core::future::future::Future>::{vtable_type} (unwound)",
-      "cat": "future_poll_unwind"
+      "tid": "43703",
+      "name": "(futures_channel::oneshot::Sender<http::header::map::HeaderMap<http::header::value::HeaderValue>>, futures_channel::oneshot::Receiver<http::header::map::HeaderMap<http::header::value::HeaderValue>>)",
+      "cat": "future_poll"
     },
     {
       "ph": "E",
-      "ts": 1749600781834267.5,
+      "ts": 1749614616150961.2,
       "pid": 1,
-      "tid": "22630",
-      "name": "<complex_future_test::complex_task3::{async_fn#0}::recursive_compute::{async_block_env#0} as core::future::future::Future>::{vtable_type} (unwound)",
-      "cat": "future_poll_unwind"
+      "tid": "43703",
+      "name": "Task<futures_task::future_obj::LocalFutureObj<()>>",
+      "cat": "future_poll"
+    },
+    {
+      "ph": "B",
+      "ts": 1749614616151223.8,
+      "pid": 1,
+      "tid": "43709",
+      "name": "Task<futures_task::future_obj::LocalFutureObj<()>>",
+      "cat": "future_poll"
     },
     {
       "ph": "E",
-      "ts": 1749600781834315.2,
+      "ts": 1749614616151764.8,
       "pid": 1,
-      "tid": "22630",
-      "name": "<complex_future_test::complex_task3::{async_fn#0}::recursive_compute::{async_block_env#0} as core::future::future::Future>::{vtable_type} (unwound)",
-      "cat": "future_poll_unwind"
+      "tid": "43677",
+      "name": "ResponseFuture<0x7694bc>",
+      "cat": "future_poll"
     },
     {
       "ph": "E",
-      "ts": 1749600781834361.8,
+      "ts": 1749614616152283.0,
       "pid": 1,
-      "tid": "22630",
-      "name": "<complex_future_test::complex_task3::{async_fn#0}::recursive_compute::{async_block_env#0} as core::future::future::Future>::{vtable_type} (unwound)",
-      "cat": "future_poll_unwind"
+      "tid": "43677",
+      "name": "(http::request::Request<()>, h2::client::PushedResponseFuture)",
+      "cat": "future_poll"
+    },
+    {
+      "ph": "i",
+      "ts": 1749614616152563.0,
+      "pid": 1,
+      "tid": "43709",
+      "name": "tokio::runtime::task::raw::poll",
+      "cat": "plugin_tokio",
+      "args": {
+        "tokio_evt": "tokio::runtime::task::raw::poll"
+      }
+    },
+    {
+      "ph": "i",
+      "ts": 1749614616153052.8,
+      "pid": 1,
+      "tid": "43677",
+      "name": "tokio::runtime::task::raw::schedule",
+      "cat": "plugin_tokio",
+      "args": {
+        "tokio_evt": "tokio::runtime::task::raw::schedule"
+      }
     },
     {
       "ph": "E",
-      "ts": 1749600781834422.5,
+      "ts": 1749614616153363.0,
       "pid": 1,
-      "tid": "22630",
-      "name": "<complex_future_test::complex_task3::{async_fn#0}::recursive_compute::{async_block_env#0} as core::future::future::Future>::{vtable_type} (unwound)",
-      "cat": "future_poll_unwind"
+      "tid": "43709",
+      "name": "Task<futures_task::future_obj::LocalFutureObj<()>>",
+      "cat": "future_poll"
+    },
+    {
+      "ph": "B",
+      "ts": 1749614616153941.8,
+      "pid": 1,
+      "tid": "43709",
+      "name": "Task<futures_task::future_obj::LocalFutureObj<()>>",
+      "cat": "future_poll"
+    },
+    {
+      "ph": "i",
+      "ts": 1749614616154661.0,
+      "pid": 1,
+      "tid": "43709",
+      "name": "tokio::runtime::task::raw::poll",
+      "cat": "plugin_tokio",
+      "args": {
+        "tokio_evt": "tokio::runtime::task::raw::poll"
+      }
+    },
+    {
+      "ph": "B",
+      "ts": 1749614616155257.2,
+      "pid": 1,
+      "tid": "43709",
+      "name": "(futures_channel::oneshot::Sender<http::header::map::HeaderMap<http::header::value::HeaderValue>>, futures_channel::oneshot::Receiver<http::header::map::HeaderMap<http::header::value::HeaderValue>>)",
+      "cat": "future_poll"
     },
     {
       "ph": "E",
-      "ts": 1749600781834625.2,
+      "ts": 1749614616156039.2,
       "pid": 1,
-      "tid": "22630",
-      "name": "<complex_future_test::complex_task3::{async_fn#0}::recursive_compute::{async_block_env#0} as core::future::future::Future>::{vtable_type} (unwound)",
-      "cat": "future_poll_unwind"
+      "tid": "43709",
+      "name": "(futures_channel::oneshot::Sender<http::header::map::HeaderMap<http::header::value::HeaderValue>>, futures_channel::oneshot::Receiver<http::header::map::HeaderMap<http::header::value::HeaderValue>>)",
+      "cat": "future_poll"
+    },
+    {
+      "ph": "B",
+      "ts": 1749614616156469.8,
+      "pid": 1,
+      "tid": "43709",
+      "name": "(futures_channel::oneshot::Sender<http::header::map::HeaderMap<http::header::value::HeaderValue>>, futures_channel::oneshot::Receiver<http::header::map::HeaderMap<http::header::value::HeaderValue>>)",
+      "cat": "future_poll"
     },
     {
       "ph": "E",
-      "ts": 1749600781834700.8,
+      "ts": 1749614616157171.5,
       "pid": 1,
-      "tid": "22630",
-      "name": "<complex_future_test::complex_task3::{async_fn#0}::recursive_compute::{async_block_env#0} as core::future::future::Future>::{vtable_type} (unwound)",
-      "cat": "future_poll_unwind"
+      "tid": "43709",
+      "name": "(futures_channel::oneshot::Sender<http::header::map::HeaderMap<http::header::value::HeaderValue>>, futures_channel::oneshot::Receiver<http::header::map::HeaderMap<http::header::value::HeaderValue>>)",
+      "cat": "future_poll"
     },
     {
       "ph": "E",
-      "ts": 1749600781834753.2,
+      "ts": 1749614616157683.2,
       "pid": 1,
-      "tid": "22630",
-      "name": "<complex_future_test::complex_task3::{async_fn#0}::recursive_compute::{async_block_env#0} as core::future::future::Future>::{vtable_type} (unwound)",
-      "cat": "future_poll_unwind"
+      "tid": "43709",
+      "name": "Task<futures_task::future_obj::LocalFutureObj<()>>",
+      "cat": "future_poll"
+    },
+    {
+      "ph": "i",
+      "ts": 1749614616196457.5,
+      "pid": 1,
+      "tid": "43707",
+      "name": "tokio::runtime::task::raw::schedule",
+      "cat": "plugin_tokio",
+      "args": {
+        "tokio_evt": "tokio::runtime::task::raw::schedule"
+      }
+    },
+    {
+      "ph": "B",
+      "ts": 1749614616197737.5,
+      "pid": 1,
+      "tid": "43707",
+      "name": "Task<futures_task::future_obj::LocalFutureObj<()>>",
+      "cat": "future_poll"
+    },
+    {
+      "ph": "i",
+      "ts": 1749614616198869.5,
+      "pid": 1,
+      "tid": "43707",
+      "name": "tokio::runtime::task::raw::poll",
+      "cat": "plugin_tokio",
+      "args": {
+        "tokio_evt": "tokio::runtime::task::raw::poll"
+      }
+    },
+    {
+      "ph": "B",
+      "ts": 1749614616199613.5,
+      "pid": 1,
+      "tid": "43707",
+      "name": "(futures_channel::oneshot::Sender<http::header::map::HeaderMap<http::header::value::HeaderValue>>, futures_channel::oneshot::Receiver<http::header::map::HeaderMap<http::header::value::HeaderValue>>)",
+      "cat": "future_poll"
     },
     {
       "ph": "E",
-      "ts": 1749600781834794.8,
+      "ts": 1749614616200462.5,
       "pid": 1,
-      "tid": "22630",
-      "name": "<complex_future_test::complex_task3::{async_fn#0}::recursive_compute::{async_block_env#0} as core::future::future::Future>::{vtable_type} (unwound)",
-      "cat": "future_poll_unwind"
+      "tid": "43707",
+      "name": "(futures_channel::oneshot::Sender<http::header::map::HeaderMap<http::header::value::HeaderValue>>, futures_channel::oneshot::Receiver<http::header::map::HeaderMap<http::header::value::HeaderValue>>)",
+      "cat": "future_poll"
+    },
+    {
+      "ph": "B",
+      "ts": 1749614616201229.8,
+      "pid": 1,
+      "tid": "43707",
+      "name": "(futures_channel::oneshot::Sender<http::header::map::HeaderMap<http::header::value::HeaderValue>>, futures_channel::oneshot::Receiver<http::header::map::HeaderMap<http::header::value::HeaderValue>>)",
+      "cat": "future_poll"
     },
     {
       "ph": "E",
-      "ts": 1749600781834840.2,
+      "ts": 1749614616202108.0,
       "pid": 1,
-      "tid": "22630",
-      "name": "<complex_future_test::complex_task3::{async_fn#0}::recursive_compute::{async_block_env#0} as core::future::future::Future>::{vtable_type} (unwound)",
-      "cat": "future_poll_unwind"
+      "tid": "43707",
+      "name": "(futures_channel::oneshot::Sender<http::header::map::HeaderMap<http::header::value::HeaderValue>>, futures_channel::oneshot::Receiver<http::header::map::HeaderMap<http::header::value::HeaderValue>>)",
+      "cat": "future_poll"
+    },
+    {
+      "ph": "B",
+      "ts": 1749614616202622.5,
+      "pid": 1,
+      "tid": "43707",
+      "name": "(futures_channel::oneshot::Sender<http::header::map::HeaderMap<http::header::value::HeaderValue>>, futures_channel::oneshot::Receiver<http::header::map::HeaderMap<http::header::value::HeaderValue>>)",
+      "cat": "future_poll"
     },
     {
       "ph": "E",
-      "ts": 1749600781834888.2,
+      "ts": 1749614616203458.8,
       "pid": 1,
-      "tid": "22630",
-      "name": "<complex_future_test::complex_task3::{async_fn#0}::recursive_compute::{async_block_env#0} as core::future::future::Future>::{vtable_type} (unwound)",
-      "cat": "future_poll_unwind"
+      "tid": "43707",
+      "name": "(futures_channel::oneshot::Sender<http::header::map::HeaderMap<http::header::value::HeaderValue>>, futures_channel::oneshot::Receiver<http::header::map::HeaderMap<http::header::value::HeaderValue>>)",
+      "cat": "future_poll"
     },
     {
       "ph": "E",
-      "ts": 1749600781834933.5,
+      "ts": 1749614616204010.2,
       "pid": 1,
-      "tid": "22630",
-      "name": "<complex_future_test::complex_task3::{async_fn#0}::recursive_compute::{async_block_env#0} as core::future::future::Future>::{vtable_type} (unwound)",
-      "cat": "future_poll_unwind"
+      "tid": "43707",
+      "name": "Task<futures_task::future_obj::LocalFutureObj<()>>",
+      "cat": "future_poll"
+    },
+    {
+      "ph": "i",
+      "ts": 1749614616251750.0,
+      "pid": 1,
+      "tid": "43707",
+      "name": "tokio::runtime::task::raw::schedule",
+      "cat": "plugin_tokio",
+      "args": {
+        "tokio_evt": "tokio::runtime::task::raw::schedule"
+      }
+    },
+    {
+      "ph": "B",
+      "ts": 1749614616253470.2,
+      "pid": 1,
+      "tid": "43707",
+      "name": "Task<futures_task::future_obj::LocalFutureObj<()>>",
+      "cat": "future_poll"
+    },
+    {
+      "ph": "i",
+      "ts": 1749614616254292.2,
+      "pid": 1,
+      "tid": "43707",
+      "name": "tokio::runtime::task::raw::poll",
+      "cat": "plugin_tokio",
+      "args": {
+        "tokio_evt": "tokio::runtime::task::raw::poll"
+      }
+    },
+    {
+      "ph": "B",
+      "ts": 1749614616254855.5,
+      "pid": 1,
+      "tid": "43707",
+      "name": "(futures_channel::oneshot::Sender<http::header::map::HeaderMap<http::header::value::HeaderValue>>, futures_channel::oneshot::Receiver<http::header::map::HeaderMap<http::header::value::HeaderValue>>)",
+      "cat": "future_poll"
     },
     {
       "ph": "E",
-      "ts": 1749600781834979.8,
+      "ts": 1749614616255836.8,
       "pid": 1,
-      "tid": "22630",
-      "name": "<complex_future_test::complex_task3::{async_fn#0}::recursive_compute::{async_block_env#0} as core::future::future::Future>::{vtable_type} (unwound)",
-      "cat": "future_poll_unwind"
+      "tid": "43707",
+      "name": "(futures_channel::oneshot::Sender<http::header::map::HeaderMap<http::header::value::HeaderValue>>, futures_channel::oneshot::Receiver<http::header::map::HeaderMap<http::header::value::HeaderValue>>)",
+      "cat": "future_poll"
+    },
+    {
+      "ph": "B",
+      "ts": 1749614616256459.2,
+      "pid": 1,
+      "tid": "43707",
+      "name": "(futures_channel::oneshot::Sender<http::header::map::HeaderMap<http::header::value::HeaderValue>>, futures_channel::oneshot::Receiver<http::header::map::HeaderMap<http::header::value::HeaderValue>>)",
+      "cat": "future_poll"
     },
     {
       "ph": "E",
-      "ts": 1749600781835024.2,
+      "ts": 1749614616257233.0,
       "pid": 1,
-      "tid": "22630",
-      "name": "<complex_future_test::complex_task3::{async_fn#0}::recursive_compute::{async_block_env#0} as core::future::future::Future>::{vtable_type} (unwound)",
-      "cat": "future_poll_unwind"
+      "tid": "43707",
+      "name": "(futures_channel::oneshot::Sender<http::header::map::HeaderMap<http::header::value::HeaderValue>>, futures_channel::oneshot::Receiver<http::header::map::HeaderMap<http::header::value::HeaderValue>>)",
+      "cat": "future_poll"
+    },
+    {
+      "ph": "B",
+      "ts": 1749614616257673.0,
+      "pid": 1,
+      "tid": "43707",
+      "name": "(futures_channel::oneshot::Sender<http::header::map::HeaderMap<http::header::value::HeaderValue>>, futures_channel::oneshot::Receiver<http::header::map::HeaderMap<http::header::value::HeaderValue>>)",
+      "cat": "future_poll"
     },
     {
       "ph": "E",
-      "ts": 1749600781835064.0,
+      "ts": 1749614616258619.5,
       "pid": 1,
-      "tid": "22630",
-      "name": "<complex_future_test::complex_task3::{async_fn#0}::recursive_compute::{async_block_env#0} as core::future::future::Future>::{vtable_type} (unwound)",
-      "cat": "future_poll_unwind"
+      "tid": "43707",
+      "name": "(futures_channel::oneshot::Sender<http::header::map::HeaderMap<http::header::value::HeaderValue>>, futures_channel::oneshot::Receiver<http::header::map::HeaderMap<http::header::value::HeaderValue>>)",
+      "cat": "future_poll"
+    },
+    {
+      "ph": "B",
+      "ts": 1749614616259090.5,
+      "pid": 1,
+      "tid": "43707",
+      "name": "(futures_channel::oneshot::Sender<http::header::map::HeaderMap<http::header::value::HeaderValue>>, futures_channel::oneshot::Receiver<http::header::map::HeaderMap<http::header::value::HeaderValue>>)",
+      "cat": "future_poll"
+    },
+    {
+      "ph": "E",
+      "ts": 1749614616259841.8,
+      "pid": 1,
+      "tid": "43707",
+      "name": "(futures_channel::oneshot::Sender<http::header::map::HeaderMap<http::header::value::HeaderValue>>, futures_channel::oneshot::Receiver<http::header::map::HeaderMap<http::header::value::HeaderValue>>)",
+      "cat": "future_poll"
+    },
+    {
+      "ph": "E",
+      "ts": 1749614616260263.2,
+      "pid": 1,
+      "tid": "43707",
+      "name": "Task<futures_task::future_obj::LocalFutureObj<()>>",
+      "cat": "future_poll"
+    },
+    {
+      "ph": "i",
+      "ts": 1749614616311073.8,
+      "pid": 1,
+      "tid": "43707",
+      "name": "tokio::runtime::task::raw::schedule",
+      "cat": "plugin_tokio",
+      "args": {
+        "tokio_evt": "tokio::runtime::task::raw::schedule"
+      }
+    },
+    {
+      "ph": "B",
+      "ts": 1749614616312047.0,
+      "pid": 1,
+      "tid": "43707",
+      "name": "Task<futures_task::future_obj::LocalFutureObj<()>>",
+      "cat": "future_poll"
+    },
+    {
+      "ph": "i",
+      "ts": 1749614616313209.0,
+      "pid": 1,
+      "tid": "43707",
+      "name": "tokio::runtime::task::raw::poll",
+      "cat": "plugin_tokio",
+      "args": {
+        "tokio_evt": "tokio::runtime::task::raw::poll"
+      }
+    },
+    {
+      "ph": "B",
+      "ts": 1749614616313874.5,
+      "pid": 1,
+      "tid": "43707",
+      "name": "(futures_channel::oneshot::Sender<http::header::map::HeaderMap<http::header::value::HeaderValue>>, futures_channel::oneshot::Receiver<http::header::map::HeaderMap<http::header::value::HeaderValue>>)",
+      "cat": "future_poll"
+    },
+    {
+      "ph": "E",
+      "ts": 1749614616314787.8,
+      "pid": 1,
+      "tid": "43707",
+      "name": "(futures_channel::oneshot::Sender<http::header::map::HeaderMap<http::header::value::HeaderValue>>, futures_channel::oneshot::Receiver<http::header::map::HeaderMap<http::header::value::HeaderValue>>)",
+      "cat": "future_poll"
+    },
+    {
+      "ph": "B",
+      "ts": 1749614616315428.2,
+      "pid": 1,
+      "tid": "43707",
+      "name": "(futures_channel::oneshot::Sender<http::header::map::HeaderMap<http::header::value::HeaderValue>>, futures_channel::oneshot::Receiver<http::header::map::HeaderMap<http::header::value::HeaderValue>>)",
+      "cat": "future_poll"
+    },
+    {
+      "ph": "E",
+      "ts": 1749614616316565.5,
+      "pid": 1,
+      "tid": "43707",
+      "name": "(futures_channel::oneshot::Sender<http::header::map::HeaderMap<http::header::value::HeaderValue>>, futures_channel::oneshot::Receiver<http::header::map::HeaderMap<http::header::value::HeaderValue>>)",
+      "cat": "future_poll"
+    },
+    {
+      "ph": "B",
+      "ts": 1749614616317195.2,
+      "pid": 1,
+      "tid": "43707",
+      "name": "(futures_channel::oneshot::Sender<http::header::map::HeaderMap<http::header::value::HeaderValue>>, futures_channel::oneshot::Receiver<http::header::map::HeaderMap<http::header::value::HeaderValue>>)",
+      "cat": "future_poll"
+    },
+    {
+      "ph": "E",
+      "ts": 1749614616318195.0,
+      "pid": 1,
+      "tid": "43707",
+      "name": "(futures_channel::oneshot::Sender<http::header::map::HeaderMap<http::header::value::HeaderValue>>, futures_channel::oneshot::Receiver<http::header::map::HeaderMap<http::header::value::HeaderValue>>)",
+      "cat": "future_poll"
+    },
+    {
+      "ph": "B",
+      "ts": 1749614616319159.0,
+      "pid": 1,
+      "tid": "43707",
+      "name": "(futures_channel::oneshot::Sender<http::header::map::HeaderMap<http::header::value::HeaderValue>>, futures_channel::oneshot::Receiver<http::header::map::HeaderMap<http::header::value::HeaderValue>>)",
+      "cat": "future_poll"
+    },
+    {
+      "ph": "E",
+      "ts": 1749614616320790.2,
+      "pid": 1,
+      "tid": "43707",
+      "name": "(futures_channel::oneshot::Sender<http::header::map::HeaderMap<http::header::value::HeaderValue>>, futures_channel::oneshot::Receiver<http::header::map::HeaderMap<http::header::value::HeaderValue>>)",
+      "cat": "future_poll"
+    },
+    {
+      "ph": "B",
+      "ts": 1749614616321656.0,
+      "pid": 1,
+      "tid": "43707",
+      "name": "(futures_channel::oneshot::Sender<http::header::map::HeaderMap<http::header::value::HeaderValue>>, futures_channel::oneshot::Receiver<http::header::map::HeaderMap<http::header::value::HeaderValue>>)",
+      "cat": "future_poll"
+    },
+    {
+      "ph": "E",
+      "ts": 1749614616322943.8,
+      "pid": 1,
+      "tid": "43707",
+      "name": "(futures_channel::oneshot::Sender<http::header::map::HeaderMap<http::header::value::HeaderValue>>, futures_channel::oneshot::Receiver<http::header::map::HeaderMap<http::header::value::HeaderValue>>)",
+      "cat": "future_poll"
+    },
+    {
+      "ph": "B",
+      "ts": 1749614616323756.0,
+      "pid": 1,
+      "tid": "43707",
+      "name": "(futures_channel::oneshot::Sender<http::header::map::HeaderMap<http::header::value::HeaderValue>>, futures_channel::oneshot::Receiver<http::header::map::HeaderMap<http::header::value::HeaderValue>>)",
+      "cat": "future_poll"
+    },
+    {
+      "ph": "E",
+      "ts": 1749614616324546.8,
+      "pid": 1,
+      "tid": "43707",
+      "name": "(futures_channel::oneshot::Sender<http::header::map::HeaderMap<http::header::value::HeaderValue>>, futures_channel::oneshot::Receiver<http::header::map::HeaderMap<http::header::value::HeaderValue>>)",
+      "cat": "future_poll"
+    },
+    {
+      "ph": "B",
+      "ts": 1749614616325110.0,
+      "pid": 1,
+      "tid": "43707",
+      "name": "(futures_channel::oneshot::Sender<http::header::map::HeaderMap<http::header::value::HeaderValue>>, futures_channel::oneshot::Receiver<http::header::map::HeaderMap<http::header::value::HeaderValue>>)",
+      "cat": "future_poll"
+    },
+    {
+      "ph": "E",
+      "ts": 1749614616326108.8,
+      "pid": 1,
+      "tid": "43707",
+      "name": "(futures_channel::oneshot::Sender<http::header::map::HeaderMap<http::header::value::HeaderValue>>, futures_channel::oneshot::Receiver<http::header::map::HeaderMap<http::header::value::HeaderValue>>)",
+      "cat": "future_poll"
+    },
+    {
+      "ph": "B",
+      "ts": 1749614616326781.2,
+      "pid": 1,
+      "tid": "43707",
+      "name": "(futures_channel::oneshot::Sender<http::header::map::HeaderMap<http::header::value::HeaderValue>>, futures_channel::oneshot::Receiver<http::header::map::HeaderMap<http::header::value::HeaderValue>>)",
+      "cat": "future_poll"
+    },
+    {
+      "ph": "E",
+      "ts": 1749614616328286.5,
+      "pid": 1,
+      "tid": "43707",
+      "name": "(futures_channel::oneshot::Sender<http::header::map::HeaderMap<http::header::value::HeaderValue>>, futures_channel::oneshot::Receiver<http::header::map::HeaderMap<http::header::value::HeaderValue>>)",
+      "cat": "future_poll"
+    },
+    {
+      "ph": "B",
+      "ts": 1749614616328923.2,
+      "pid": 1,
+      "tid": "43707",
+      "name": "(futures_channel::oneshot::Sender<http::header::map::HeaderMap<http::header::value::HeaderValue>>, futures_channel::oneshot::Receiver<http::header::map::HeaderMap<http::header::value::HeaderValue>>)",
+      "cat": "future_poll"
+    },
+    {
+      "ph": "E",
+      "ts": 1749614616333928.5,
+      "pid": 1,
+      "tid": "43707",
+      "name": "(futures_channel::oneshot::Sender<http::header::map::HeaderMap<http::header::value::HeaderValue>>, futures_channel::oneshot::Receiver<http::header::map::HeaderMap<http::header::value::HeaderValue>>)",
+      "cat": "future_poll"
+    },
+    {
+      "ph": "B",
+      "ts": 1749614616334686.0,
+      "pid": 1,
+      "tid": "43707",
+      "name": "(futures_channel::oneshot::Sender<http::header::map::HeaderMap<http::header::value::HeaderValue>>, futures_channel::oneshot::Receiver<http::header::map::HeaderMap<http::header::value::HeaderValue>>)",
+      "cat": "future_poll"
+    },
+    {
+      "ph": "E",
+      "ts": 1749614616336022.0,
+      "pid": 1,
+      "tid": "43707",
+      "name": "(futures_channel::oneshot::Sender<http::header::map::HeaderMap<http::header::value::HeaderValue>>, futures_channel::oneshot::Receiver<http::header::map::HeaderMap<http::header::value::HeaderValue>>)",
+      "cat": "future_poll"
+    },
+    {
+      "ph": "E",
+      "ts": 1749614616339500.5,
+      "pid": 1,
+      "tid": "43704",
+      "name": "Task<futures_task::future_obj::LocalFutureObj<()>>",
+      "cat": "future_poll"
+    },
+    {
+      "ph": "E",
+      "ts": 1749614616340094.2,
+      "pid": 1,
+      "tid": "43702",
+      "name": "Task<futures_task::future_obj::LocalFutureObj<()>>",
+      "cat": "future_poll"
+    },
+    {
+      "ph": "E",
+      "ts": 1749614616340671.0,
+      "pid": 1,
+      "tid": "43703",
+      "name": "Task<futures_task::future_obj::LocalFutureObj<()>>",
+      "cat": "future_poll"
+    },
+    {
+      "ph": "E",
+      "ts": 1749614616341024.5,
+      "pid": 1,
+      "tid": "43706",
+      "name": "Task<futures_task::future_obj::LocalFutureObj<()>>",
+      "cat": "future_poll"
+    },
+    {
+      "ph": "E",
+      "ts": 1749614616341372.8,
+      "pid": 1,
+      "tid": "43705",
+      "name": "Task<futures_task::future_obj::LocalFutureObj<()>>",
+      "cat": "future_poll"
+    },
+    {
+      "ph": "E",
+      "ts": 1749614616341746.0,
+      "pid": 1,
+      "tid": "43709",
+      "name": "Task<futures_task::future_obj::LocalFutureObj<()>>",
+      "cat": "future_poll"
+    },
+    {
+      "ph": "E",
+      "ts": 1749614616342391.8,
+      "pid": 1,
+      "tid": "43707",
+      "name": "Task<futures_task::future_obj::LocalFutureObj<()>>",
+      "cat": "future_poll"
+    },
+    {
+      "ph": "E",
+      "ts": 1749614616343657.0,
+      "pid": 1,
+      "tid": "43708",
+      "name": "Task<futures_task::future_obj::LocalFutureObj<()>>",
+      "cat": "future_poll"
+    },
+    {
+      "ph": "E",
+      "ts": 1749614616345156.2,
+      "pid": 1,
+      "tid": "43707",
+      "name": "Task<futures_task::future_obj::LocalFutureObj<()>>",
+      "cat": "future_poll"
     }
   ],
   "displayTimeUnit": "us"
