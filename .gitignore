@@ -25,3 +25,6 @@ MANIFEST
 target/
 Cargo.lock
 **/*.rs.bk 
+
+# Example Code
+BugStalker/
